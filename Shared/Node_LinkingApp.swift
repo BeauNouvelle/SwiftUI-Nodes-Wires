@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct Node_LinkingApp: App {
+    
+    @StateObject var model = NodeModel()
+    @StateObject var drawingManager = DrawingManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(model)
+                .environmentObject(drawingManager)
         }
     }
 }
