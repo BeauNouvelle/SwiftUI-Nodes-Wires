@@ -9,9 +9,7 @@ import Foundation
 import SwiftUI
 
 final class DrawingManager: ObservableObject {
-    
     @Published var activePathStart: CGPoint = .zero
     @Published var activePathCurrent: CGPoint = .zero
     @Published var isDrawing: Bool = false
-    
 }

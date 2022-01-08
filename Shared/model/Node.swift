@@ -9,27 +9,27 @@ import Foundation
 import SwiftUI
 
 final class NodeModel: ObservableObject {
-    @Published var nodes: [Node] = [Node(), Node()]
+    @Published var nodes: [Node] = []
     @Published var wires: [Wire] = []
 }
 
-final class Node: ObservableObject, Identifiable {
+final class Node: Identifiable {
     var id = UUID()
-    @Published var position: CGPoint = .zero
-    @Published var sockets: [Socket] = [Socket(), Socket()]
+    var position: CGPoint = .zero
+    var sockets: [Socket] = [Socket(), Socket()]
 }
 
-final class Socket: ObservableObject, Identifiable {
+final class Socket: Identifiable {
     var id = UUID()
-    @Published var position: CGPoint = .zero
+    var position: CGPoint = .zero
 }
 
-final class Wire: ObservableObject, Identifiable {
+final class Wire: Identifiable {
     
     var id = UUID()
     
-    @Published var startSocket: Socket
-    @Published var endSocket: Socket
+    var startSocket: Socket
+    var endSocket: Socket
     
     init(startSocket: Socket, endSocket: Socket) {
         self.startSocket = startSocket

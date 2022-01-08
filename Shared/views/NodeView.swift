@@ -10,7 +10,7 @@ import SwiftUI
 
 struct NodeView: View {
     
-    @StateObject var node: Node
+    let node: Node
     @EnvironmentObject var model: NodeModel
     @EnvironmentObject var drawingManager: DrawingManager
     
